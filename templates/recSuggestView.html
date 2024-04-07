@@ -1,0 +1,32 @@
+{% extends "recipeBase.html" %}
+
+{% block content %}
+
+<div class="recipe-details" style="text-align: center;margin: 40px;">
+    {% for recipe in recipes %}
+    <h1>{{ recipe.RecipeName }}</h1>
+
+    <img src="/static/styles/recipe_photo/{{ recipe.RecipeImage }}" alt="{{ recipe.title }}">
+
+    <!-- Ingredients section -->
+    <h2 class="section-title" style="text-align: left; margin-bottom: 8px;">Ingredients</h2>
+    <ul class="ingredient-list" style="text-align: left;">
+        {% for ingredient in recipe.Ingredients.split('\r\n') %}
+        <li>{{ ingredient }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Instructions Section -->
+    <h2 class="section-title" style="text-align: left; margin-bottom: 8px;">Instructions</h2>
+    <ol class="instruction-list" style="text-align: left;">
+        {% for ingredient in recipe.Instructions.split('\r\n') %}
+        <li>{{ ingredient }}</li>
+        {% endfor %}
+    </ol>
+    {% endfor %}
+    <a href="{{ url_for('recipeSuggestion') }}" class="btn btn-primary">
+        <span class="glyphicon glyphicon-remove"></span> Return
+    </a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,150 @@
+{% extends "recipeBase.html" %}
+
+{% block content %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/css/style1.css') }}">
+<div class="main-content" id="panel">
+    <div class="container-fluid pt-3">
+    <a class="btn mb-4 btn-primary open-button" onclick="openForm()">+Add</a>
+    </div>
+    <div>{{ status }}</div>
+    <div class="form-popup" id="myForm">
+        <form action="{{ url_for('addGrocery')}}" method="post" enctype="multipart/form-data" class="form-container">
+            <label for="Description">Shopping List</label>
+            <textarea name="Ingredients" rows="3" cols="50" required></textarea><br>
+            <label for="Stock">Notes</label>
+            <textarea name="Notes" rows="3" cols="50" required></textarea><br>
+            <input type="submit" value="submit" class="btn bg-gradient-primary mt-4"></input>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Your Recipes</h2>
+                </div>
+    
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th class="col-sm-5 col-md-3" style="margin: auto;">GroceryID</th>
+                        <th class="col-sm-5 col-md-3" style="margin: auto;">Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for recipe in recipes %}
+                    <tr>
+                        <td class="col-sm-5 col-md-3">
+                        <div class="media">
+                            <div class="media-body">
+                            <h4 class="media-heading" style="margin: auto;">{{ recipe.GroceryID }}</h4>
+                            </div>
+                        </div>
+                        </td>
+                        <td class="col-sm-5 col-md-3" style="margin: auto;">{{ recipe.Date }}</td>
+                        <td class="col-sm-5 col-md-3">
+                        <div class="container-fluid pt-3">
+                          <a class="btn mb-4 btn-primary" href="{{ url_for('viewGrocery', GroceryID=recipe.GroceryID) }}">
+                          <span class="glyphicon glyphicon-remove"></span>View</a>
+                        </div>
+                        </td>
+                        <td class="col-sm-5 col-md-3">
+                            <div class="container-fluid pt-3">
+                              <a class="btn mb-4 btn-primary" href="{{ url_for('editGrocery', GroceryID=recipe.GroceryID) }}">
+                              <span class="glyphicon glyphicon-remove"></span>Edit</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div>{{ status }}</div>
+            </div>
+        </section>
+</div>
+
+<script>
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+// function openForm1() {
+//     document.getElementById("myForm1").style.display = "block";
+//   }
+  
+// function closeForm1() {
+//   document.getElementById("myForm1").style.display = "none";
+// }
+</script>
+<style>
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 600px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+{% endblock %}

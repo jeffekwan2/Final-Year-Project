@@ -1,0 +1,264 @@
+.home-container {
+  width: 100%;
+  display: flex;
+  z-index: 100;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.home-text {
+  top: 37px;
+  right: 270px;
+  position: absolute;
+  font-size: 30px;
+  align-self: flex-end;
+  font-weight: 700;
+}
+.home-image {
+  width: 365px;
+  height: 106px;
+  object-fit: cover;
+}
+.home-text01 {
+  top: 490px;
+  right: 130px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text02 {
+  top: 720px;
+  left: 120px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text03 {
+  top: 720px;
+  right: 130px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text04 {
+  top: 775px;
+  right: 130px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text05 {
+  top: 435px;
+  right: 130px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text06 {
+  top: 435px;
+  left: 120px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text07 {
+  top: 380px;
+  right: 130px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text08 {
+  top: 380px;
+  left: 120px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text09 {
+  top: 325px;
+  left: 120px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text10 {
+  top: 265px;
+  left: 50px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+}
+.home-text11 {
+  top: 124px;
+  right: 270px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text12 {
+  top: 79px;
+  right: 270px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text13 {
+  top: 150px;
+  left: 0px;
+  width: auto;
+  position: absolute;
+  font-size: 50px;
+  max-width: auto;
+  min-width: auto;
+  font-weight: 700;
+}
+.home-text17 {
+  top: 320px;
+  right: 130px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text18 {
+  top: 550px;
+  left: 50px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+}
+.home-text19 {
+  top: 665px;
+  right: 130px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text20 {
+  top: 610px;
+  right: 130px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text21 {
+  top: 665px;
+  left: 120px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text22 {
+  top: 610px;
+  left: 120px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text23 {
+  top: 490px;
+  left: 50px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+.home-text24 {
+  top: 775px;
+  left: 50px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+}
+@media(max-width: 1200px) {
+  .home-text13 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+  .home-text14 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+}
+
+  .page-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+  .page-text {
+    top: 1250px;
+    right: 130px;
+    bottom: 200px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .page-text1 {
+    top: 1250px;
+    left: 50px;
+    bottom: 200px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .page-text2 {
+    top: 985px;
+    right: 130px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .page-text3 {
+    top: 930px;
+    left: 50px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .page-text4 {
+    top: 930px;
+    right: 130px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .page-text5 {
+    top: 985px;
+    left: 50px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .page-text6 {
+    top: 1095px;
+    right: 130px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .page-text7 {
+    top: 1040px;
+    left: 50px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .page-text8 {
+    top: 1040px;
+    right: 130px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .page-text9 {
+    top: 1095px;
+    left: 50px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 700;
+  }

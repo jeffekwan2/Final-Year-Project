@@ -1,0 +1,368 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard Builder</title>
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://demos.creative-tim.com/soft-ui-dashboard/assets/css/nucleo-icons.css">
+    <link rel="stylesheet" href="https://demos.creative-tim.com/soft-ui-dashboard/assets/css/nucleo-svg.css">
+    <link rel="stylesheet" href="https://demos.creative-tim.com/soft-ui-dashboard/assets/css/soft-ui-dashboard.min.css?v=1.0.2">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/loopple/loopple.css">
+</head>
+
+<body class="g-sidenav-show">
+    <nav class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start position-absolute ms-3 bg-white loopple-fixed-start" id="sidenav-main"><i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute right-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+        <hr class="horizontal dark mt-0">
+        <div class="d-flex align-items-center justify-content-cente ms-4 ps-2">
+            <nav class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start position-absolute ms-3 bg-white loopple-fixed-start" id="sidenav-main"><i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute right-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+                <hr class="horizontal dark mt-0">
+
+                <a class="navbar-brand m-0" href="{{ url_for('signIn') }}">
+                    <span class="ms-1 font-weight-bold">Recipe Finder Website
+                    </span>
+                </a>
+                <hr class="horizontal dark">
+                <div class="collapse navbar-collapse  w-auto" id="sidenav-collapse-main">
+                    <ul class="navbar-nav">
+                        <li class="nav-item mt-3">
+                            <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link  active" href="{{ url_for('signIn') }}">
+                                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                                    <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <title>document</title>
+                                        <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="Rounded-Icons" transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                                <g id="Icons-with-opacity" transform="translate(1716.000000, 291.000000)">
+                                                    <g id="document" transform="translate(154.000000, 300.000000)">
+                                                        <path class="color-background" d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z" id="Path" opacity="0.603585379"></path>
+                                                        <path class="color-background" d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z" id="Shape"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span class="nav-link-text ms-1">Sign In</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  " href="{{ url_for('signUp') }}">
+                                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                                    <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <title>spaceship</title>
+                                        <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="Rounded-Icons" transform="translate(-1720.000000, -592.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                                <g id="Icons-with-opacity" transform="translate(1716.000000, 291.000000)">
+                                                    <g id="spaceship" transform="translate(4.000000, 301.000000)">
+                                                        <path class="color-background" d="M39.3,0.706666667 C38.9660984,0.370464027 38.5048767,0.192278529 38.0316667,0.216666667 C14.6516667,1.43666667 6.015,22.2633333 5.93166667,22.4733333 C5.68236407,23.0926189 5.82664679,23.8009159 6.29833333,24.2733333 L15.7266667,33.7016667 C16.2013871,34.1756798 16.9140329,34.3188658 17.535,34.065 C17.7433333,33.98 38.4583333,25.2466667 39.7816667,1.97666667 C39.8087196,1.50414529 39.6335979,1.04240574 39.3,0.706666667 Z M25.69,19.0233333 C24.7367525,19.9768687 23.3029475,20.2622391 22.0572426,19.7463614 C20.8115377,19.2304837 19.9992882,18.0149658 19.9992882,16.6666667 C19.9992882,15.3183676 20.8115377,14.1028496 22.0572426,13.5869719 C23.3029475,13.0710943 24.7367525,13.3564646 25.69,14.31 C26.9912731,15.6116662 26.9912731,17.7216672 25.69,19.0233333 L25.69,19.0233333 Z" id="Shape"></path>
+                                                        <path class="color-background" d="M1.855,31.4066667 C3.05106558,30.2024182 4.79973884,29.7296005 6.43969145,30.1670277 C8.07964407,30.6044549 9.36054508,31.8853559 9.7979723,33.5253085 C10.2353995,35.1652612 9.76258177,36.9139344 8.55833333,38.11 C6.70666667,39.9616667 0,40 0,40 C0,40 0,33.2566667 1.855,31.4066667 Z" id="Path"></path>
+                                                        <path class="color-background" d="M17.2616667,3.90166667 C12.4943643,3.07192755 7.62174065,4.61673894 4.20333333,8.04166667 C3.31200265,8.94126033 2.53706177,9.94913142 1.89666667,11.0416667 C1.5109569,11.6966059 1.61721591,12.5295394 2.155,13.0666667 L5.47,16.3833333 C8.55036617,11.4946947 12.5559074,7.25476565 17.2616667,3.90166667 L17.2616667,3.90166667 Z" id="color-2" opacity="0.598539807"></path>
+                                                        <path class="color-background" d="M36.0983333,22.7383333 C36.9280725,27.5056357 35.3832611,32.3782594 31.9583333,35.7966667 C31.0587397,36.6879974 30.0508686,37.4629382 28.9583333,38.1033333 C28.3033941,38.4890431 27.4704606,38.3827841 26.9333333,37.845 L23.6166667,34.53 C28.5053053,31.4496338 32.7452344,27.4440926 36.0983333,22.7383333 L36.0983333,22.7383333 Z" id="color-3" opacity="0.598539807"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span class="nav-link-text ms-1">Sign Up</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="ms-2">
+                <h5 class="text-sm mb-0">Towngas Billing System</h5>
+            </div>
+        </div>
+        <hr class="horizontal dark">
+        <div class="collapse navbar-collapse  w-auto" id="sidenav-collapse-main">
+            <ul class="navbar-nav">
+                <li class="nav-item mt-3">
+                    <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="{{ url_for('signIn') }}">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>document</title>
+                                <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="Rounded-Icons" transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                        <g id="Icons-with-opacity" transform="translate(1716.000000, 291.000000)">
+                                            <g id="document" transform="translate(154.000000, 300.000000)">
+                                                <path class="color-background" d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z" id="Path" opacity="0.603585379"></path>
+                                                <path class="color-background" d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z" id="Shape"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Sign In</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="{{ url_for('signUp') }}">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>spaceship</title>
+                                <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="Rounded-Icons" transform="translate(-1720.000000, -592.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                        <g id="Icons-with-opacity" transform="translate(1716.000000, 291.000000)">
+                                            <g id="spaceship" transform="translate(4.000000, 301.000000)">
+                                                <path class="color-background" d="M39.3,0.706666667 C38.9660984,0.370464027 38.5048767,0.192278529 38.0316667,0.216666667 C14.6516667,1.43666667 6.015,22.2633333 5.93166667,22.4733333 C5.68236407,23.0926189 5.82664679,23.8009159 6.29833333,24.2733333 L15.7266667,33.7016667 C16.2013871,34.1756798 16.9140329,34.3188658 17.535,34.065 C17.7433333,33.98 38.4583333,25.2466667 39.7816667,1.97666667 C39.8087196,1.50414529 39.6335979,1.04240574 39.3,0.706666667 Z M25.69,19.0233333 C24.7367525,19.9768687 23.3029475,20.2622391 22.0572426,19.7463614 C20.8115377,19.2304837 19.9992882,18.0149658 19.9992882,16.6666667 C19.9992882,15.3183676 20.8115377,14.1028496 22.0572426,13.5869719 C23.3029475,13.0710943 24.7367525,13.3564646 25.69,14.31 C26.9912731,15.6116662 26.9912731,17.7216672 25.69,19.0233333 L25.69,19.0233333 Z" id="Shape"></path>
+                                                <path class="color-background" d="M1.855,31.4066667 C3.05106558,30.2024182 4.79973884,29.7296005 6.43969145,30.1670277 C8.07964407,30.6044549 9.36054508,31.8853559 9.7979723,33.5253085 C10.2353995,35.1652612 9.76258177,36.9139344 8.55833333,38.11 C6.70666667,39.9616667 0,40 0,40 C0,40 0,33.2566667 1.855,31.4066667 Z" id="Path"></path>
+                                                <path class="color-background" d="M17.2616667,3.90166667 C12.4943643,3.07192755 7.62174065,4.61673894 4.20333333,8.04166667 C3.31200265,8.94126033 2.53706177,9.94913142 1.89666667,11.0416667 C1.5109569,11.6966059 1.61721591,12.5295394 2.155,13.0666667 L5.47,16.3833333 C8.55036617,11.4946947 12.5559074,7.25476565 17.2616667,3.90166667 L17.2616667,3.90166667 Z" id="color-2" opacity="0.598539807"></path>
+                                                <path class="color-background" d="M36.0983333,22.7383333 C36.9280725,27.5056357 35.3832611,32.3782594 31.9583333,35.7966667 C31.0587397,36.6879974 30.0508686,37.4629382 28.9583333,38.1033333 C28.3033941,38.4890431 27.4704606,38.3827841 26.9333333,37.845 L23.6166667,34.53 C28.5053053,31.4496338 32.7452344,27.4440926 36.0983333,22.7383333 L36.0983333,22.7383333 Z" id="color-3" opacity="0.598539807"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Sign Up</span>
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link  " href="javascript:;">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>customer-support</title>
+                                <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="Rounded-Icons" transform="translate(-1717.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                        <g id="Icons-with-opacity" transform="translate(1716.000000, 291.000000)">
+                                            <g id="customer-support" transform="translate(1.000000, 0.000000)">
+                                                <path class="color-background" d="M45,0 L26,0 C25.447,0 25,0.447 25,1 L25,20 C25,20.379 25.214,20.725 25.553,20.895 C25.694,20.965 25.848,21 26,21 C26.212,21 26.424,20.933 26.6,20.8 L34.333,15 L45,15 C45.553,15 46,14.553 46,14 L46,1 C46,0.447 45.553,0 45,0 Z" id="Path" opacity="0.59858631"></path>
+                                                <path class="color-foreground" d="M22.883,32.86 C20.761,32.012 17.324,31 13,31 C8.676,31 5.239,32.012 3.116,32.86 C1.224,33.619 0,35.438 0,37.494 L0,41 C0,41.553 0.447,42 1,42 L25,42 C25.553,42 26,41.553 26,41 L26,37.494 C26,35.438 24.776,33.619 22.883,32.86 Z" id="Path"></path>
+                                                <path class="color-foreground" d="M13,28 C17.432,28 21,22.529 21,18 C21,13.589 17.411,10 13,10 C8.589,10 5,13.589 5,18 C5,22.529 8.568,28 13,28 Z" id="Path"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Enqiry</span>
+                    </a>
+                </li> -->
+            </ul>
+        </div>
+    </nav>
+    <div class="main-content" id="panel">
+        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 mt-3 shadow-none border-radius-xl loopple-navbar-empty" id="navbarTop">
+            <div class="navbar-add" data-toggle="modal" data-target="#navbarModal">
+                <svg id="Layer_1" class="m-auto" width="20px" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 114">
+                    <rect style="fill:#cacfda;" x="0.5" y="44.5" width="113" height="24" rx="9.94" ry="9.94"></rect>
+                    <path style="fill:#cacfda;" d="M146.56,85A9.46,9.46,0,0,1,156,94.44v4.11a9.46,9.46,0,0,1-9.44,9.44H53.44A9.46,9.46,0,0,1,44,98.56V94.44A9.46,9.46,0,0,1,53.44,85h93.11m0-1H53.44A10.48,10.48,0,0,0,43,94.44v4.11A10.48,10.48,0,0,0,53.44,109h93.11A10.48,10.48,0,0,0,157,98.56V94.44A10.48,10.48,0,0,0,146.56,84Z" transform="translate(-43 -40)"></path>
+                    <rect style="fill:#cacfda;" x="45.5" y="0.5" width="24" height="113" rx="9.94" ry="9.94"></rect>
+                    <path style="fill:#cacfda;" d="M102.56,41A9.46,9.46,0,0,1,112,50.44v93.11a9.46,9.46,0,0,1-9.44,9.44H98.44A9.46,9.46,0,0,1,89,143.56V50.44A9.46,9.46,0,0,1,98.44,41h4.11m0-1H98.44A10.48,10.48,0,0,0,88,50.44v93.11A10.48,10.48,0,0,0,98.44,154h4.11A10.48,10.48,0,0,0,113,143.56V50.44A10.48,10.48,0,0,0,102.56,40Z" transform="translate(-43 -40)"></path>
+                </svg>
+            </div>
+        </nav>
+        <div class="container-fluid pt-3">
+            <div class="card z-index-0">
+                <div class="card-header text-center pt-4">
+                    <h5>Log in</h5>
+                </div>
+                <div class="card-body">
+                    <form role="form" class="text-start was-validated" data-gtm-form-interact-id="0" action="{{ url_for('signIn') }}" method="post">
+                        <div class="msg">{{ msg }}</div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email" aria-label="Email" name="Email" required>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="Password" aria-label="Password" data-gtm-form-interact-field-id="0" name="PW" required>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn bg-gradient-info w-100 my-4 mb-2">Sign in</button>
+                        </div>
+                        <div class="mb-2 position-relative text-center">
+                            <p class="text-sm font-weight-bold mb-2 text-secondary text-border d-inline z-index-2 bg-white px-3"> or </p>
+                        </div>
+                        <div class="text-center">
+                            <a href="{{ url_for('signUp') }}"><button type="button" class="btn bg-gradient-dark w-100 mt-2 mb-4">Sign up</button></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="loopple-alert loopple-alert-gradient-dark loopple-alert-dismissible loopple-fade loopple-position-fixed loopple-z-index-9999 loopple-bottom-2 loopple-mx-auto loopple-text-center loopple-right-0 loopple-left-0 loopple-w-50" role="alert"><strong>View and edit your project online</strong><a class="loopple-btn loopple-btn-white loopple-ml-2" href="https://builder.creative-tim.com/builder/project-S8my32oDcZZQavaaLGnUiK79i2KfVBFx3yO" target="_blank">Editor</a><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">�</span></button></div> -->
+    <script src="https://demos.creative-tim.com/soft-ui-dashboard/assets/js/core/popper.min.js"></script>
+    <script src="https://demos.creative-tim.com/soft-ui-dashboard/assets/js/core/bootstrap.min.js"></script>
+    <script src="https://demos.creative-tim.com/soft-ui-dashboard/assets/js/plugins/chartjs.min.js"></script>
+    <script src="https://demos.creative-tim.com/soft-ui-dashboard/assets/js/plugins/Chart.extension.js"></script>
+    <script src="https://demos.creative-tim.com/soft-ui-dashboard/assets/js/soft-ui-dashboard.min.js?v=1.0.2"></script>
+    <script>
+        if (document.querySelector("#chart-bars")) {
+           	var ctx = document.getElementById("chart-bars").getContext("2d");
+           	new Chart(ctx, {
+              type: "bar",
+              data: {
+                labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                datasets: [{
+                  label: "Sales",
+                  tension: 0.4,
+                  borderWidth: 0,
+                  borderRadius: 4,
+                  borderSkipped: false,
+                  backgroundColor: "#fff",
+                  data: [450, 200, 100, 220, 500, 100, 400, 230, 500],
+                  maxBarThickness: 6
+                }, ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    display: false,
+                  }
+                },
+                interaction: {
+                  intersect: false,
+                  mode: 'index',
+                },
+                scales: {
+                  y: {
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                      drawOnChartArea: false,
+                      drawTicks: false,
+                    },
+                    ticks: {
+                      suggestedMin: 0,
+                      suggestedMax: 500,
+                      beginAtZero: true,
+                      padding: 15,
+                      font: {
+                        size: 14,
+                        family: "Open Sans",
+                        style: 'normal',
+                        lineHeight: 2
+                      },
+                      color: "#fff"
+                    },
+                  },
+                  x: {
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                      drawOnChartArea: false,
+                      drawTicks: false
+                    },
+                    ticks: {
+                      display: false
+                    },
+                  },
+                },
+              },
+            });
+        
+           };
+           if (document.querySelector("#chart-line")) {
+           	var ctx2 = document.getElementById("chart-line").getContext("2d");
+           	var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
+           	gradientStroke1.addColorStop(1, "rgba(203,12,159,0.2)");
+           	gradientStroke1.addColorStop(0.2, "rgba(72,72,176,0.0)");
+           	gradientStroke1.addColorStop(0, "rgba(203,12,159,0)");
+           	var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
+           	gradientStroke2.addColorStop(1, "rgba(20,23,39,0.2)");
+           	gradientStroke2.addColorStop(0.2, "rgba(72,72,176,0.0)");
+           	gradientStroke2.addColorStop(0, "rgba(20,23,39,0)");
+           	new Chart(ctx2, {
+              type: "line",
+              data: {
+                labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                datasets: [{
+                    label: "Mobile apps",
+                    tension: 0.4,
+                    borderWidth: 0,
+                    pointRadius: 0,
+                    borderColor: "#cb0c9f",
+                    borderWidth: 3,
+                    backgroundColor: gradientStroke1,
+                    fill: true,
+                    data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+                    maxBarThickness: 6
+        
+                  },
+                  {
+                    label: "Websites",
+                    tension: 0.4,
+                    borderWidth: 0,
+                    pointRadius: 0,
+                    borderColor: "#3A416F",
+                    borderWidth: 3,
+                    backgroundColor: gradientStroke2,
+                    fill: true,
+                    data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+                    maxBarThickness: 6
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    display: false,
+                  }
+                },
+                interaction: {
+                  intersect: false,
+                  mode: 'index',
+                },
+                scales: {
+                  y: {
+                    grid: {
+                      drawBorder: false,
+                      display: true,
+                      drawOnChartArea: true,
+                      drawTicks: false,
+                      borderDash: [5, 5]
+                    },
+                    ticks: {
+                      display: true,
+                      padding: 10,
+                      color: '#b2b9bf',
+                      font: {
+                        size: 11,
+                        family: "Open Sans",
+                        style: 'normal',
+                        lineHeight: 2
+                      },
+                    }
+                  },
+                  x: {
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                      drawOnChartArea: false,
+                      drawTicks: false,
+                      borderDash: [5, 5]
+                    },
+                    ticks: {
+                      display: true,
+                      color: '#b2b9bf',
+                      padding: 20,
+                      font: {
+                        size: 11,
+                        family: "Open Sans",
+                        style: 'normal',
+                        lineHeight: 2
+                      },
+                    }
+                  },
+                },
+              },
+            }); 
+           };
+    </script>
+    <script src="../assets/js/loopple/loopple.js"></script>
+</body>

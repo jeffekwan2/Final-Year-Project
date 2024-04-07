@@ -1,0 +1,37 @@
+{% extends "recipeBase.html" %}
+
+{% block content %}
+<div class="main-content" id="panel">
+    <div class="container-fluid pt-3">
+        <div class="card z-index-0">
+            <div class="card-body">
+                <form class="was-validated" action="{{ url_for('pwChangeSubmit') }}" method="post">
+                    <div class="msg">{{ msg }}</div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Phone Number" aria-label="PhoneNumber" name="PhoneNumber" required>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Email" aria-label="Password" data-gtm-form-interact-field-id="0" name="Email" required>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" placeholder="Password" aria-label="Password" data-gtm-form-interact-field-id="0" name="PW" required>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" placeholder="Confirm Password" aria-label="ConfirmPW" data-gtm-form-interact-field-id="0" name="ConfirmPW" required>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="text-center">
+                    </div>
+                <div class="container-fluid pt-3">
+                </div><button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

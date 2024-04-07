@@ -1,0 +1,34 @@
+{% extends "recipeBase.html" %}
+
+{% block content %}
+<div class="main-content" id="panel">
+    <div class="container-fluid pt-3">
+        <div class="card z-index-0">
+            <div class="card-body">
+                <form action="{{ url_for('editGrocerySubmit') }}" method="post" enctype="multipart/form-data">
+                    {% for hits in hits %}
+                    <div class="msg">{{ msg }}</div>
+                    <input type="hidden" name="GroceryID" value="{{ GroceryID }}">
+                    <div class="mb-3">
+                        <label for="Ingredients">Ingredients</label>
+                        <textarea class="form-control" name="Ingredients" rows="3" cols="50" required>{{ hits.Ingredients }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Instructions">Notes</label>
+                        <textarea class="form-control" name="Notes" rows="3" cols="50" required>{{ hits.Notes }}</textarea>
+                    </div>
+                    <div class="text-center">
+                    </div>
+                    {% endfor %}
+                <div class="container-fluid pt-3">
+                </div><button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
+                </form>
+            </div>
+        </div>
+        <a href="{{ url_for('grocery') }}" class="btn btn-primary">
+            <span class="glyphicon glyphicon-remove"></span> Return
+        </a>
+    </div>
+</div>
+
+{% endblock %}

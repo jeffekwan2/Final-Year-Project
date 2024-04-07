@@ -1,0 +1,60 @@
+{% extends "recipeBase.html" %}
+
+{% block content %}
+
+<div class="recipe-details" style="text-align: center;margin: 40px;">
+    <h1>{{ recipe.title }}</h1>
+
+    <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+
+    <div style="margin-top: 2%;">
+        <table style="margin: 0 auto; width: 50%;">
+            <tr>
+                {% for nutrient in recipe.nutrition.nutrients %}
+                    {% if nutrient.name == "Calories" %}
+                    <td>Calories: {{ nutrient.amount }} {{ nutrient.unit }}</td>
+                    {% elif nutrient.name == "Fat" %}
+                    <td>Fat: {{ nutrient.amount }} {{ nutrient.unit }}</td>
+                    {% elif nutrient.name == "Carbohydrates" %}
+                    <td>Carbohydrates: {{ nutrient.amount }} {{ nutrient.unit }}</td>
+                    {% elif nutrient.name == "Protein" %}
+                    <td>Protein: {{ nutrient.amount }} {{ nutrient.unit }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+
+    <!-- Ingredients section -->
+    <h2 class="section-title" style="text-align: left; margin-bottom: 8px;">Ingredients</h2>
+    <ul class="ingredient-list" style="text-align: left;">
+        {% for ingredient in recipe.extendedIngredients %}
+        <li>{{ ingredient.original }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Instructions Section -->
+    <h2 class="section-title" style="text-align: left; margin-bottom: 8px;">Instructions</h2>
+    <ol class="instruction-list" style="text-align: left;">
+        {% for step in recipe.analyzedInstructions[0].steps %}
+        <li>{{ step.step }}</li>
+        {% endfor %}
+    </ol>
+
+    <form action="{{ url_for('bookmark', recipe_id=recipe.id, title=recipe.title) }}" method="post">
+        <button type="submit">Bookmark</button>
+    </form>
+</div>
+<style>
+table, th, td {
+    border:1px solid black;
+    border-spacing: 2px;
+    font-size: 18px;
+    padding: 3px;
+}
+
+td {
+    text-align: center;
+}
+</style>
+{% endblock %}

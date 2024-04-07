@@ -1,0 +1,42 @@
+{% extends "recipeBase.html" %}
+
+{% block content %}
+<div class="main-content" id="panel">
+    <div class="container-fluid pt-3">
+        <div class="card z-index-0">
+            <div class="card-body">
+                <form action="{{ url_for('editSuggestionSubmit') }}" method="post" enctype="multipart/form-data">
+                    {% for hits in hits %}
+                    <div class="msg">{{ msg }}</div>
+                    <input type="hidden" name="SuggestionID" value="{{ SuggestionID }}">
+                    <div class="mb-3">
+                        <label for="RecipeName">Recipe Name</label>
+                        <input type="text" class="form-control" placeholder="Inventory Name" aria-label="invName" name="RecipeName" value="{{ hits.RecipeName }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Ingredients">Ingredients</label>
+                        <textarea class="form-control" name="Ingredients" rows="3" cols="50" required>{{ hits.Ingredients }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Instructions">Instructions</label>
+                        <textarea class="form-control" name="Instructions" rows="3" cols="50" required>{{ hits.Instructions }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="RecipeImage">Upload Document</label>
+                        <input type="file" class="form-control" aria-label="invPicture" data-gtm-form-interact-field-id="0" name="RecipeImage" accept="image/*" required>
+                    </div>
+                    <div class="text-center">
+                    </div>
+                    {% endfor %}
+                <div class="container-fluid pt-3">
+                </div><button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
+                </form>
+            </div>
+        </div>
+        <a href="{{ url_for('recipeSuggestion') }}" class="btn btn-primary">
+            <span class="glyphicon glyphicon-remove"></span> Return
+        </a>
+    </div>
+</div>
+
+{% endblock %}
